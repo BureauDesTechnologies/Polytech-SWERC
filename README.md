@@ -8,7 +8,7 @@ Bienvenue dans le repos contenant tous les cours pour préparer les élèves du 
     - A.1 - [Complexité algorithmique & algorithmes de référence](./Algo/Chap1_Complexité-&-Algos-de-référence/)
     - A.2 - [Structures de données usuelles](./Algo/Chap2_Structure-de-données-usuelles/)
     - A.3 - [Récursivité et programmation dynamique](./Algo/Chap3_Récursivité-&-Prog-dynamique/)
-    - A.4 - [Backtracking & Algorithme glouton](./Algo/Chap3_Récursivité-&-Prog-dynamique/)
+    - A.4 - [Backtracking & Algorithme glouton](./Algo/Chap4_Backtracking-&-Algos-gloutons/)
     - A.5 - [Arbres et BST](./Algo/Chap5_Arbres-&-BST/)
     - A.6 - [Graphes](./Algo/Chap6_Graphes/)
     - A.7 - [Algorithmes de tri](./Algo/Chap7_Algos-de-tri/)
