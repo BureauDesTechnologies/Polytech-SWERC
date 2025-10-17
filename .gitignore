@@ -1,0 +1,6 @@
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Local directory to put the things you don't want to commit
+.local/

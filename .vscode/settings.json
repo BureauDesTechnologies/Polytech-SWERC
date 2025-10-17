@@ -1,0 +1,4 @@
+{
+    "tinymist.exportPdf": "onSave",
+    "tinymist.previewFeature": "disable"
+}
