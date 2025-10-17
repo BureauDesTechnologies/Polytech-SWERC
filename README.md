@@ -36,7 +36,7 @@ Voici comment configurer un environnement Tyspt :
         cargo install --locked typst-cli
         ```
 2. Configurer VSCode :
-    - Installer l'extension `Tinymist Typst` et `Tinymist Typst HTML`
+    - Installer l'extension `Tinymist Typst`
     - Installer l'extension `vsocde-pdf`
     - Installer l'extension `EditorConfig for VS Code`
 
