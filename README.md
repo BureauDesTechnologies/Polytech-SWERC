@@ -54,7 +54,7 @@ Voici comment configurer un environnement Tyspt :
 
     ***Remarque :** Il est tout à fait possible d'utiliser un autre éditeur que VSCode.*
 
-
+Vous avez aussi la possibilité d'utiliser le site de [Typst](https://typst.app/).
 
 ## Crédits
 
@@ -63,6 +63,7 @@ Voici comment configurer un environnement Tyspt :
     - Rédaction des chapitres **A.4** & **A.7**
 
 - **Bilel Mahdjoub** (Polytech Nice Sophia)
+    
     Contributions :
     - Rédaction d'une majorité des chapitres dans [courses](./courses/)
 
