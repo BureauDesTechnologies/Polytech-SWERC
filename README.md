@@ -4,6 +4,18 @@ Bienvenue dans le repos contenant tous les cours pour préparer les élèves du 
 
 ## ToC
 
+1. [Complexité algorithmique](./courses/1_Complexity/)
+2. [Structures de données usuelles](./courses/2_Common_data_structures/)
+3. [Recherche complète, paradigmes et balayage](./courses/3_Complete_search/)
+4. [Graphes](./courses/4_Graphs/)
+5. [Arbres](./courses/5_Trees/)
+6. [Opérateurs binaires](./courses/6_Binary_operators/)
+7. [Théorie des nombres](./courses/7_Number_theory/)
+
+### Ancienne ToC
+
+Vous pourrez trouver les chapitres suivants dans [old](./old/).
+
 * **Algorithmique**
     - A.1 - [Complexité algorithmique & algorithmes de référence](./Algo/Chap1_Complexité-&-Algos-de-référence/)
     - A.2 - [Structures de données usuelles](./Algo/Chap2_Structure-de-données-usuelles/)
@@ -44,11 +56,15 @@ Voici comment configurer un environnement Tyspt :
 
 
 
-## Remerciements
+## Crédits
 
 - **Patrick Bizot** (Polytech Nice Sophia)  
     Contributions :
     - Rédaction des chapitres **A.4** & **A.7**
+
+- **Bilel Mahdjoub** (Polytech Nice Sophia)
+    Contributions :
+    - Rédaction d'une majorité des chapitres dans [courses](./courses/)
 
 <!--
 - ... (Polytech Nice Sophia)  
