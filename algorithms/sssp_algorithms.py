@@ -2,36 +2,38 @@ import math
 from collections import defaultdict
 from heapq import *
 
-def dijkstra(graph, n, s, path):
-
+def dijkstra(graph, n, s):
     dist = [math.inf for _ in range(n)]
     visited = [False for _ in range(n)]
-
-    path[s] = -1
     dist[s] = 0
-
     for i in range(n):
         v = -1
-        for j in range(n):
+        for j in range(n): # First find shortest distance
             if not visited[j] and (v == -1 or dist[j] < dist[v]):
                 v = j
-        
-        if dist[v] == math.inf:
+        if dist[v] == math.inf: # in case no node is reachable
             break
-        
         visited[v] = True
-        for neigh in graph[v]:
+        for neigh in graph[v]: # Then do the relaxation work 
             node, length = neigh
             if dist[v] + length < dist[node]:
                 dist[node] = dist[v] + length
-                path[node] = v
 
-def dijkstra_opt(graph, n, s):
+def dijkstra_opt(graph, source):
+    """
+    Finds the shortest path from `source` to each other node.
+    
+    Assumes that the graph is given as an adjacency list (list of list), each node should be indexed
+    from 0 to V - 1, where V is the number of vertex in the graph.
+    The algorithm works ONLY when all edges have positive weights.
 
+    Time complexity : O(E log(V))
+    """
+    n = len(graph)
     dist = [math.inf for _ in range(n)]
 
-    dist[s] = 0
-    heap = [(0, s)]
+    dist[source] = 0
+    heap = [(0, source)]
 
     while heap:
         d_v, v = heappop(heap)
@@ -47,31 +49,38 @@ def dijkstra_opt(graph, n, s):
     
     return dist
 
-def bellman_ford(edges, n, a, s):
-    dist = [-math.inf] * (n)
+def bellman_ford(edges, n, s, iterations=None):
+    """
+    edges: list of (u, v, w) tuples, a directed edge u -> v with weight w
+    n: number of nodes
+    s: source node
+    iterations: number of relaxation rounds (default n - 1, enough for any shortest path)
+
+    Assumes the nodes in the graph are labeled from 0 to n - 1.
+    Time complexity : O(V * E)
+    returns (has_negative_cycle, dist)
+    """
+    if iterations is None:
+        iterations = n - 1
+
+    dist = [math.inf for _ in range(n)]
     dist[s] = 0
 
-    for k in range(a):
-        temp = [-math.inf] * n
-        for a, b, c in edges:
-            temp[b] = max(temp[b], dist[b], dist[a] + c)
-        # print(temp)
-        dist = temp
-    return dist
+    for _ in range(iterations):
+        updated = False
 
-n = int(input())
-q = int(input())
+        for u, v, w in edges:
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                updated = True
 
-graph = defaultdict(list)
-for _ in range(q):
-    a, b, c = [int(v) for v in input().split()]
-    graph[a - 1].append((b - 1, c))
-    graph[b - 1].append((a - 1, c))
+        if not updated:  # early stop: distances are stable
+            break
 
-path = [-1 for _ in range(n)]
-print(graph)
-dijkstra(graph, n, 0, path)
-print(path)
+    # If anything can still be relaxed, there is a negative cycle
+    has_negative_cycle = any(dist[u] + w < dist[v] for u, v, w in edges)
+
+    return has_negative_cycle, dist
 
 
     

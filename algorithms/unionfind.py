@@ -7,8 +7,8 @@ class DSU:
     
     def find(self, e):
         """
-        Récupère le représentant de e.
-        L'opération est en O(a(n)) où a est l'inverse de la fonction d'Ackermann.
+        Find the representant of e.
+        Time complexity : O(a(n)) where a is the inverse ackermann function (grows very very slow)
         """
         if not (0 <= e < self.size):
             return None
@@ -27,8 +27,8 @@ class DSU:
     
     def union(self, e1, e2):
         """
-        Fait la réunion des ensembles disjoints de e1 et e2.
-        L'opération est en O(a(n)) où a est l'inverse de la fonction d'Ackermann.
+        Groups together the set of e1 and e2.
+        Time complexity : O(a(n)) where a is the inverse ackermann function (grows very very slow)
         """
 
         r1, r2 = self.find(e1), self.find(e2)

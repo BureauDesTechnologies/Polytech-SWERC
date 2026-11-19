@@ -4,7 +4,7 @@ Version top -> bottom
 """
 class SegTree:
 
-    def __init__(self, n, callback, neutral):
+    def __init__(self, n):
         """
         Initialize the segment tree.
         All values are set to ``neutral``.
@@ -14,9 +14,9 @@ class SegTree:
         while self.size < n:
             self.size *= 2
         
-        self.callback = callback
-        self.array = [neutral] * (2 * self.size)
-        self.neutral = neutral
+        self.callback = min
+        self.array = [10**18] * (2 * self.size)
+        self.neutral = 10**18
 
     def build(self, array):
         """
